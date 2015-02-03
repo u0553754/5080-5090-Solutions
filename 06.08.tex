@@ -1,0 +1,41 @@
+\section*{06.08}
+
+\paragraph*{Let X be a random variable with pdf ${f}_{x} \left( x \right) =\begin{cases} 4{ x }^{ 3 }\quad \quad ,\quad 0<x<1 \\ 0\quad \quad \quad ,\quad o/w \end{cases}$
+Use the transformation method to determine the pdf of each of the following random variables}
+
+\subparagraph{a) Find the pdf of $Y={ X }^{ 4 }$} 
+
+\subparagraph{Setup:} solve for $x(y)$ and take the absolute value of it's derivative $|\frac { dx(y)}{ dy }|$
+
+\paragraph \qquad\qquad\qquad $x(y) = {y}^{\frac{1}{4}}$ \qquad\qquad $|{\frac { dx(y)}{ dy }}| = {y}^{\frac{-3}{4}} =\frac{1}{{4y}^{\frac{3}{4}}}$
+
+\subparagraph{}Now plug all of the above information in the below equation
+$${{f}_{y}(y)={ f }_{ x }(x(y)) |\frac { dx(y)}{ dy }|}$$
+
+\subparagraph{Result:} ${ f }_{ y }(y)=\begin{cases} { 4y }^{ \frac { 3 }{ 4 }  }\frac { 1 }{ { 4y }^{ \frac { 3 }{ 4 }  } } \quad ,\quad 0<y<1 \\ 0\qquad  \qquad ,\quad o/w \end{cases}=\begin{cases} 1 \quad \quad ,\quad 0<y<1\\ 0 \quad \quad ,\quad o/w \end{cases}$
+
+\subparagraph{b) Find the pdf of $W={e}^{X}$}
+
+\subparagraph{Setup:} solve for $x(w)$ and take the absolute value of it's derivative $|\frac { dx(w)}{ dw }|$
+
+\paragraph \qquad\qquad\qquad $x(w) = ln(w)$ \qquad\qquad $|{\frac { dx(w)}{dw}}| = \frac{1}{w}$
+
+\subparagraph{}Now plug all of the above information in the below equation
+$${{f}_{w}(w)={ f }_{w}(x(w)) |\frac {dx(w)}{dw}|}$$
+
+\subparagraph{Result:} ${f}_{w}(w)=\begin{cases}{{{4ln(w)}^{3}}\frac{1}{w}} \quad \\ 0\quad\end{cases}=\begin{cases}{\frac{{4ln(w)}^{3}}{w}} \quad\quad,\quad 1\leq w\leq e \\ 0\qquad\qquad\quad,\quad o/w \end{cases}$
+ 
+
+\subparagraph{c) Find the pdf of $Z={ln(x)}$}
+
+\subparagraph{Setup:} solve for $x(z)$ and take the absolute value of it's derivative $|\frac { dx(z)}{ dz }|$
+
+\paragraph \qquad\qquad\qquad $x(z) = e^{z}$ \qquad\qquad $|{\frac {dx(z)}{dz}}| = e^{z}$
+
+\subparagraph{}Now plug all of the above information in the below equation
+$${{f}_{z}(z)={f}_{z}(x(z)) |\frac {dx(z)}{dz}|}$$
+
+\subparagraph{Result:} ${f}_{z}(z)=\begin{cases}{{{4e}^{3z}}{e}^{z}} \quad \\ 0\quad\end{cases}=\begin{cases}{{{4e}^{4z}}} \quad\quad,\quad z\leq 0 \\ 0\qquad\quad,\quad o/w \end{cases}$
+
+\subparagraph{d) Find the pdf of $U={(X-0.5)}^{2}$}
+\subparagraph{Setup:} this is not a one-to-one transformation - did not solve
