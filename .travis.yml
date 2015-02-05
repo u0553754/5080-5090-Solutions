@@ -1,0 +1,21 @@
+os:
+- linux
+
+before_install:
+- sudo apt-get update -qq 
+
+# from https://gist.github.com/snim2/9160862
+install:
+- sudo apt-get install -qq texlive-latex3 texlive-math-extra texlive-latex-extra texlive-fonts-recommended
+# syntax checker:
+#- sudo apt-get install -qq chktex
+ 
+script:
+# To lint LaTeX files:
+#- chktex -W # Print version information.
+# Muting a few of the more common warnings.
+# Remove the -n# to turn on all warnings. 
+# Using -v0 for less verbose output.
+#- chktex -q -v0 -n1 -n3 -n10 -n26 -n36 Solutions.tex
+# draftmode doesn't generate PDF file
+- pdflatex -draftmode -interaction=nonstopmode -halt-on-error Solutions.tex
