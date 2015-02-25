@@ -1,2 +1,6 @@
 
 { \bf 07.19 }
+In Exercise 2, find the limiting distribution of $\frac{1}{n} exp (X_{n:n})$.  From Problem 2,  $F(x) = (1+ e^{-x})^{-1}$ for all real x.\\
+Set $Y = \frac{1}{n} exp(X_{n:n})$\\
+Then $G_{n}(y) = P(\frac{1}{n} \exp(X_{n:n}) \le y) = P(X_{n:n} \le \ln(ny)) = ((1+\exp(-(\ln(ny)))^{-1})^{-n} = (1 + \frac{1}{ny})^{-n}$\\
+$\lim_{n\to\infty} (1+\frac{1}{ny})^{-n} =   e^{\frac{-1}{y}}$ for $y > 0 $ and $0$ for $y\le 0$.
