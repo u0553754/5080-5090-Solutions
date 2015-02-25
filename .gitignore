@@ -1,3 +1,6 @@
-*.aux
-*.log
-*.gz
+# Exclude all files with extensions other than .tex and .pdf
+
+*.*
+
+!*.tex
+!*.pdf
