@@ -1,2 +1,21 @@
+{\bf 07.05} \quad
 
-{ \bf 07.05 }
+$ \frac{\sum_{i=1}^{n} (Z_i+ \frac{1}{n} ) }{\sqrt{n}} =\frac{ (\sum_{i=1}^{n} Z_i)  + \frac{1}{n} \times n }{n}=\frac{\sum_{i=1}^{n} Z_i}{\sqrt{n}} + \frac{1}{\sqrt{n}} $ 
+\par
+
+$ M_{\frac{\sum_{i=1}^{n} (Z_i+ \frac{1}{n} ) }{\sqrt{n}} } (t)= M_{\frac{\sum_{i=1}^{n} Z_i}{\sqrt{n}} + \frac{1}{\sqrt{n}} } (t) = E[e^  { \frac{1}{\sqrt{n}} \times t} ] \times (M_ {\frac{Z}{\sqrt{n}}} ( t ) )^n $ 
+
+Since $Z_i \sim N(0,1)$, then $M_Z (t)= e^ \frac {t^2}{2} $
+
+We can get $M_ {\frac{Z}{\sqrt{n}}} ( t )= e^ \frac {( \frac{t}{\sqrt{n}})^2}{2} = e^ \frac{t^2}{2n}$
+
+$ M_{\frac{\sum_{i=1}^{n} (Z_i+ \frac{1}{n} ) }{\sqrt{n}} } (t)= E[e^  { \frac{1}{\sqrt{n}} \times t} ] \times (M_ {\frac{Z}{\sqrt{n}}} ( t ) )^n = e^ \frac{t}{\sqrt{n}} \times (e^ \frac{t^2}{2n})^n $
+\par
+
+$ = e^ \frac{t}{\sqrt{n}} \times e^ \frac{t^2}{2}  $
+
+when n goes to infinity, $ e^ \frac{t}{\sqrt{n}} $ goes to 1. \par
+So we have \par
+$ \lim_{n \to \infty} M_{\frac{\sum_{i=1}^{n} (Z_i+ \frac{1}{n} ) }{\sqrt{n}} } (t) =  e^ \frac{t^2}{2} $ \par
+which is the MGF of the normal distribution with mean 0 and variance 1 \par
+we can conclude that $ \frac{\sum_{i=1}^{n} (Z_i+ \frac{1}{n} ) }{\sqrt{n}} \to X  \sim N(0,1)$ 
