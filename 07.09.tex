@@ -1,7 +1,9 @@
 {\bf 7.09}
 
-\section*{Given: Let $X_1, X_2, \ldots, X_{100}$ be a random sample from an exponential distribution, $X_i \sim \text{EXP}(1)$, and let $Y = X_1 + X_2 + \cdots + X_{100}$.}
-\subsection*{a) Give an approximation for $P[Y > 100]$.}
+Let $X_1, X_2, \ldots, X_{100}$ be a random sample from an exponential distribution, $X_i \sim \text{EXP}(1)$, and let $Y = X_1 + X_2 + \cdots + X_{100}$.\\
+(A)	Give an approximation for $P[Y > 100]$.
 To approximate $Y$, we need to know the mean $\mu$ and variance $\sigma^2$ of $Y$. The table in the back of the book gives that the mean for an exponential random variable is the parameter, $\theta$, which in this case is 1. Likewise, $\sigma^2 = \theta^2$, which again is 1 in this problem. Note that because $Y$ is the sum of a random variable $X$, the expected value for $Y$ is the sum of the expected values for each $X_i$, and in this case is 100. Same is true of the variance, and therefore $\sigma^2 = 100$. It follows that 
 $$P[Y > 110] = 1 - P[Y \leq 110] = 1 - P[\Sigma X_i \leq 110] = 1 - P[\frac{\Sigma X_i - 100}{\sqrt{100}} \leq \frac{110 - 100}{\sqrt{100}}]$$
-This can be approximated by $$1 - \Phi (10/10) = 1 - \Phi(1) = 1 - .8413 = .1587 \blacksquare$$
+This can be approximated by $$1 - \Phi (10/10) = 1 - \Phi(1) = 1 - .8413 = 0.1587.$$\\
+(B) If $\bar{X}$ is the sample mean, then approximate $P[1.1<\bar{X}<1.2]$.
+$P[1.1<\bar{X}<1.2]=P[110<Y<120]=\Phi(2)-\Phi(1)=0.9772-0.8413=0.1359.$\\
