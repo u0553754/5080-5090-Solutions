@@ -1,2 +1,11 @@
 
 { \bf 07.10 }
+Assume $X_{n}\sim$ GAM($1$,n) and let $Z_{n} = \frac{X_{n} - n}{\sqrt{n}}$\\
+Show that $Z-{n} \rightarrow Z\sim$ N($0$,$1$)\\
+Hint: Show that $M_{Z_{n}}(t) = e^(-\sqrt{n}t - ln(1-\frac{t}{\sqrt{n}})$\\
+
+$M_{\frac{X_{n}-n}{\sqrt{n}}}(t) = E(e^\frac{t(X_{n}-n)}{\sqrt{n}})$\\
+    $=E(e^(\frac{tX_{n}}{\sqrt{n}}-t\sqrt{n})$\\
+    $=E(e^(\frac{tX_{n}}{\sqrt{n}}))E(e^(-t\sqrt{n}))$\\
+    $=e^(-\sqrt{n}t - ln(1-\frac{t}{\sqrt{n}}))$\\
+    $\lim_{n\to\infty} e^(-\sqrt{n}t - ln(1-\frac{t}{\sqrt{n}})) = e^(\frac{-t^2}{2})\sim$ N($0$,$1$)\\ 
