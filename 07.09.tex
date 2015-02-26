@@ -1,0 +1,14 @@
+
+{\bf 07.09}
+
+Let $X_1,X_2, ... ,X_{100}$ be a random sample from an exponential distribution, 
+$X_i\sim EXP(1)$, and let $Y=X_1+X_2+ ... +X_{100}$.\\
+\\(a) Give an approximation for $P[Y>110]$.
+\\ $100\cdot E[X]=100\cdot1=100$
+\\ $100\cdot Var(X)=100\cdot1^2=100$
+\\ $P[Y>110] = P[\frac{Y-100}{\sqrt{100}}>\frac{110-100}{\sqrt{100}}]$
+\\ $ = 1-\Phi(\frac{110-100}{\sqrt{100}})=1-\Phi(1)$
+\\ $ = 1-0.8413=0.1587$\\
+\\(b) If $\bar{X}$ is the sample mean, then approximate $P[1.1<\bar{X}<1.2]$.
+\\ $P[1.1<\bar{X}<1.2]=P[110<Y<120]=\Phi(2)-\Phi(1)=0.9772-0.8413=0.1359$\\
+\\
