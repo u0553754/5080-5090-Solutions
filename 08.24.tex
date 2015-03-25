@@ -1,2 +1,71 @@
+\textbf{08.24} \\
+Let $Y _{n} \sim \chi ^2(n)$. Find the limiting distribution of $(Y _{n}-n)/ \sqrt{2n}$ as n $\rightarrow \infty$, using moment generating functions. 
+\vspace{0.25in}\\ 
+First, note that the MGF of $Y_{n}$ is $M_{Y_{n}} = \Big( \frac{1} {1-2t} \Big) ^{n/2}$. Then,\\
 
-{ \bf 08.24 }
+$M_{\frac{(Y_{n}-n)}{\sqrt{2n}}} (t)
+= E\Big[e^{t \frac{(Y_{n}-n)} {\sqrt{2n}} } \Big] 
+= E\Big[e^{\big( \frac{t} {\sqrt{2n}}Y_{n} \big)} e^{\big( \frac{-tn} {\sqrt{2n}} \big)} \Big]
+= e^{\frac{-tn} {\sqrt{2n}} } E\Big[e^{\big( \frac{t} {\sqrt{2n}}Y_{n} \big)} \Big]  
+\vspace{1mm}\\$
+
+$\hspace{0.75in}
+= e^{\frac{-tn} {\sqrt{2n}} } M_{Y_{n}} \Big( \frac{t} {\sqrt{2n}} \Big)
+= e^{ \frac{-tn} {\sqrt{2n}} } \Bigg( \frac{1} {1-2 \big( \frac{t} {\sqrt{2n}} \big) } \Bigg) ^{n/2}
+= e^{ \frac{-tn} {\sqrt{2n}} } \bigg( \frac{ \sqrt{2n}} { \sqrt{2n} - 2t} \bigg) ^{n/2} 
+\vspace{1mm} $\\ 
+
+$\hspace{0.75in}
+= e^{ \frac{-tn} {\sqrt{2n}} } \bigg( 1- \frac {2t} {\sqrt{2n}} \bigg) ^{-n/2} 
+= e^{ -t \sqrt{n/2} } \bigg( 1- t \sqrt{2/n} \bigg) ^{-n/2}
+\vspace{10mm} \\ $
+Next we take the limit. \\ 
+
+$\displaystyle \lim_{n\to\infty}M_{\frac{(Y_{n}-n)}{\sqrt{2n}}} (t) 
+= \displaystyle \lim_{n\to\infty} e^{-t \sqrt{n/2}} (1-t \sqrt{2/n})^{-n/2}
+\vspace{1mm} \\$
+
+$\hspace{1.1in}
+=\displaystyle \lim_{m\to\infty} e^{-tm} (1-t/m)^{-m^2}
+\hspace{2.5in}
+$Let $m=\sqrt{n/2} $\\ 
+
+$ \ln \displaystyle \lim_{n\to\infty} M_{\frac{(Y_{n}-n)}{\sqrt{2n}}} (t)
+= \displaystyle \lim_{m\to\infty} \ln \Big( e^{-tm} (1-t/m)^{-m^2} \Big)
+\hspace{2in}
+$Log both sides$
+\vspace{1mm} $\\
+
+$\hspace{1.1in}
+= \displaystyle \lim_{m\to\infty} \Big( -tm -m^2 \ln(1-t/m) \Big) 
+\vspace{1mm} $\\
+
+$\hspace{1.1in} 
+= -\displaystyle \lim_{m\to\infty} \Big( m^2 (t/m + \ln(1-t/m) \Big)
+\vspace{1mm} $\\
+
+$\hspace{1.1in}
+= -\displaystyle \lim_{x\to 0^+} \Bigg( \frac {tx + \ln(1-tx)} {x^2} \Bigg)
+\hspace{2.5in}
+$Let $ x=1/m 
+\vspace{1mm} $\\
+
+$\hspace{1.1in} 
+=- \displaystyle \lim_{x\to 0^+} \Bigg( \frac {t - \frac{t} {(1-tx)}} {2x} \Bigg)
+\hspace{2.25in}
+$Use L'Hospital's Rule$ 
+\vspace{1mm} $\\
+
+$\hspace{1.1in} 
+= -\frac{t} {2} \displaystyle \lim_{x\to 0^+} \Bigg( \frac {\frac{-tx} {(1-tx)}} {x} \Bigg)
+\vspace{1mm} $\\
+
+$\hspace{1.1in} 
+= \frac{t^2} {2} \displaystyle \lim_{x\to 0^+} \Big( \frac {1} {1-tx} \Big)
+\vspace{1mm} $\\
+
+$\hspace{1.1in} 
+=t^2/2
+\vspace{10mm}$\\
+Hence, $\displaystyle \lim_{n\to\infty}M_{\frac{(Y_{n}-n)}{\sqrt{2n}}} (t) = e^{t^2/2}$ which is the MGF of the random variable for the standard normal distribution. 
+
