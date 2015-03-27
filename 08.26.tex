@@ -1,2 +1,28 @@
+{\bf 08.26}
+  Let $X_1$,$X_2$,...,$X_n$ be a random sample from a distribution whose first four moments exist, and let 
+  $$
+    S_n^{\,2}=\sum_{i=1}^n(X_i-\bar{X})^2/(n-1).
+  $$ 
+  Show that $ S_n^{\,2}\to \sigma^2$ as $n\to \infty$.
 
-{ \bf 09.26 }
+\begin{proof}[Proof]
+   Consider property $ S_n^{\,2}=(\sum_{i=1}^n X_i{\,2}-n\bar{X}^2)/(n-1).$ Based on this equation, we have,
+    \begin{align*}
+     E(S_n^{\,2})&=E[\sum_{i=1}^n X_i^{\,2}-n\bar{X}^2]/(n-1)\\
+                &=\frac{1}{n-1}[\sum_{i=1}^nE(X_i^{\,2})-nE(\bar{x}^2)]\\
+                &=\frac{1}{n-1}[n(\mu^2+\sigma^2)-n(\mu^2+\frac{\sigma^2}{n})]\\
+                &=\frac{1}{n-1}[(n-1)\sigma^2]\\
+                &=\sigma^2
+     \end{align*}
+   And according to the Theorem $8.2.2$, we also have,
+   $$ 
+   Var(S_n^{\,2})=(\mu_4-\frac{n-3}{n-1}\sigma^4)/n, n>1
+   $$
+   With the Chebychev inequality, we get
+    $$ 
+    P[|S_n^{\,2}-\sigma^2|<\varepsilon]\geq\frac{1-(\mu_4-\frac{n-3}{n-1}\sigma^4)}{\varepsilon^2n}
+    $$
+    so that $\lim_{x \to \infty}P[|S_n^{\,2}-\sigma^2|<\varepsilon]=1.$\\
+Therefore, according to the definition of Convergence in Probability, we have $S_n^{\,2}\overset{p}{\to}\sigma^2.$
+    
+\end{proof}------------------------------------------------------------------------------------------------------ 
