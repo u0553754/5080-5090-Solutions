@@ -1,2 +1,83 @@
 
 { \bf 07.15 }
+Let $W_i$ be the weight of the $i$th airline passenger's luggage. Assume that the weights are independent, each with pdf
+\[
+\begin{cases}
+f(w) = \theta B^{-\theta} w^{\theta-1} & \text{if } 0 < w < B \\
+0 & \text{otherwise}
+\end{cases}
+\]
+
+a) For $n = 100$, $\theta = 3$, and $B = 80$, approximate $P\left( \sum\limits^{100}_{i=1} W_i > 6025 \right)$:
+\begin{align*}
+E(w) &= \mu = \int\limits^B_0 w f(w) = \int\limits^B_0 w 3 B^{-3} w^{3-1} dw = \int\limits^B_0 3 B^{-3} w^3 dw \\
+  &= 3 B^{-3} \left[\frac{w^4}{4}\right]^B_0 = \frac{3}{4} B = \frac{3}{4} (80) = 60 \\
+E(w^2) &= \int\limits^B_0 w^2 f(w) = \int\limits^B_0 w^2 3 B^{-3} w^2 dw = \int\limits^B_0 3 B^{-3} w^4 dw \\
+  &= 3 B^{-3} \left[\frac{w^5}{5}\right]^B_0 = \frac{3}{5} B^2 = \frac{3}{5} (80)^2 = 3840 \\
+var(w)  &= \sigma^2 = E(w^2) - \mu^2 = 3840 - 60^2 = 240 \\
+\end{align*}
+\begin{align*}
+P\left( \sum\limits^{100}_{i=1} W_i > 6025 \right) &= 1 - P\left( \sum\limits^{100}_{i=1} W_i \le 6025 \right) 
+  \approx 1 - \Phi\left( \frac{6025 - n\mu}{\sigma \sqrt{n}} \right) \\
+  &\approx 1 - \Phi\left( \frac{6025 - (100)(60)}{\left(\sqrt{240}\right) \left(\sqrt{100}\right)} \right) \\
+  &\approx 1 - \Phi(0.161) \approx 1 - 0.5636 \approx 0.4364
+\end{align*}
+
+d) Find the limiting distribution of $\left( \frac{W_{n:n}}{B}\right)^n$. Let $Y_n = \left( \frac{W_{n:n}}{B}\right)^n$:
+\begin{align*}
+G_n(y) &= P\left(Y_n \le y \right) = P\left[ \left( \frac{W_{n:n}}{B} \right)^n \le y \right]
+  = P\left[ \left( W_{n:n} \right) \le B y^{(1/n)} \right] \\
+  &= \left[ F\left( B y^{(1/n)} \right) \right]^n
+  = \left[ B^{-\theta} \left(B y^{(1/n)} \right)^\theta \right]^n = y^\theta
+\end{align*}
+\[
+G_n(y) =
+\begin{cases}
+0 & \text{if } y \le 0 \\
+y^\theta & \text{if } 0 < y < 1 \\
+1 & \text{if } y \ge 1
+\end{cases}
+\]
+
+e) Find the asymptotic normal distribution of the median $W_{k:n}$, where $k/n \rightarrow 0.5$ with $k - 0.5n$ bounded:
+\begin{align*}
+f(w) &= \theta B^{-\theta} w^{\theta-1}, \text{ if } 0 < w < B \\
+F(w) &= \int\limits^w_0 \theta B^{-\theta} u^{\theta-1} du
+  = \theta B^{-\theta}  \left[ \frac{u^\theta}{\theta} \right]^w_0 = B^{-\theta} w^\theta
+\end{align*}
+\begin{align*}
+E(w) &= \mu = \int\limits^B_0 w f(w) = \int\limits^B_0 w \theta B^{-\theta} w^{\theta-1} dw
+  = \int\limits^B_0 \theta B^{-\theta} w^\theta dw \\
+  &= \theta B^{-\theta}  \left[ \frac{w^{\theta + 1}}{\theta + 1} \right]^B_0
+  = \frac{\theta B^{-\theta} B^{\theta + 1}}{\theta + 1} = \frac{\theta B}{\theta + 1}
+\end{align*}
+Given $p = 0.5$:
+\begin{align*}
+F(w_p) &= 0.5 = B^{-\theta} w_p^\theta \\
+ w_p^\theta &= 0.5 B^{\theta}\\
+w_p &= 0.5^{1/\theta} B \\
+c^2 &= \frac{p (1 - p)}{[f(w_p)]^2} = \frac{0.25}{\left[ \theta B^{-\theta} \left( 0.5^{1/\theta} B\right)^{\theta - 1}\right]^2}
+  = \frac{0.25}{0.25 \left( \theta B^{-1} 0.5^{1/\theta} \right)^2}
+  = \frac{1}{\left( \theta B^{-1} 0.5^{1/\theta} \right)^2} \\
+Z_n &= \frac{W_{k:n} - w_p}{c\sqrt{n}}
+  = \frac{W_{k:n} - \frac{B}{2^{1/\theta}}}{\frac{1}{\left( \theta B^{-1} 0.5^{1/\theta} \right)} \left( \sqrt{n} \right)} 
+  = \frac{W_{k:n} - \frac{B}{2^{1/\theta}}}{\frac{B}{\left( \theta 2^{1/\theta} \right)} \left( \sqrt{n} \right)}
+  \rightarrow Z \sim N\left( \frac{B}{2^{1/\theta}}\,, \left[\frac{B}{\theta 2^{1/\theta}}\right]^2 n \right)
+\end{align*}
+
+f) By Theorem 7.6.3,  $W_{k:n} \overset{P}{\longrightarrow} \frac{B}{2^{1/\theta}}$.
+
+g) Find the limiting distribution of $\frac{n^{1/\theta} W_{1:n}}{B}$. Let $Y_n = \frac{n^{1/\theta} W_{1:n}}{B}$:
+\begin{align*}
+G_n(y) &= P\left(Y_n \le y \right) = P\left[ \frac{n^{1/\theta} W_{1:n}}{B} \le y \right]
+  = P\left[ W_{1:n} \le \frac{B}{n^{1/\theta}}(y) \right] \\
+  &= 1 - \left[ 1 - F\left( \frac{B}{n^{1/\theta}}(y)\right) \right]^n
+  = 1 - \left[ 1 - B^{-\theta} \left( \frac{B}{n^{1/\theta}}(y)\right)^\theta \right]^n \\
+  &= 1 - \left[ 1 - B^{-\theta}  B^{\theta} \left(\frac{1}{n^{1/\theta}}\right)^\theta y^\theta \right]^n
+  =  1 - \left[ 1 - \frac{y^\theta}{n} \right]^n
+\end{align*}
+\begin{align*}
+\lim_{n \to \infty}{G_n(y)}  &= \lim_{n \to \infty}{1 - \left[ 1 + \frac{-y^\theta}{n}\right]^n}
+  = 1 - e^{-y^\theta} \sim \text{WEI}(1, \theta)
+\end{align*}
+
