@@ -1,1 +1,23 @@
 { \bf 09.23 }
+\section*{Let $X_{1},...,X_{n}$ be a random Sample from a normal distribution, $X_{i}~N(0,\theta)$.\\
+a) Is the MLE, $\hat{\theta}$, an unbiased estimator of $\theta$?}
+\paragraph*{
+The short answer is yes.  \\
+To obtain this, first solve for the MLE, then find the expected value of the MLE and it should return $\theta$.  If it does then the MLE is unbiased.\\
+To find the MLE first find The joint function\\
+$L=\prod_{i=1}^n \frac{1}{\sqrt{2\pi\theta}e^\frac{-x^2}{2\theta}}$\\
+Then take the log of the joint function.\\
+$l=\sum_{i=1}^n \frac{-1}{2}log(2)-\frac{1}{2}log(\pi)-\frac{1}{2}log(\theta)-\frac{x_{i}^2}{2\theta}=C-\frac{n}{2}log(\theta)-\sum_{i=1}^n \frac{x_{i}^2}{2\theta}$\\
+Then take the derivative, set it to zero and solve for $\theta$.\\
+$\frac{dl}{d\theta}=-\frac{n}{2\theta}+\sum_{i=1}^n \frac{x_{i}^2}{2\theta^2}=0$\\
+$\sum_{i=1}^n \frac{x_{i}^2}{2\theta^2}=\frac{n}{2\theta}$\\
+$sum_{i=1}^n x_{i}62=n\theta$\\
+$\hat{\theta}=\sum_{i=1}^n \frac{x_{i}^2}{n}.$\\
+$\hat{\theta}$ is unbiased if $E[\hat{\theta}]=\theta$\\
+$E[\hat{\theta}]=E[\sum_{i=1}^n \frac{x_{i}^2}{n}=\sum_{i=1}^n \frac{E[x_{i}^2]}{n}$\\
+$E[x_{i}^2]$ looks complicated so instead of calculating directly use $var=E[x^2]-E[x]^2$\\
+$E[x]=\mu$ which in this case is zero\\
+$var(x)=\theta$ both of which were obtained from the given parameters.\\
+so $E[x^2]+0=\theta\\
+\sum_{i=1}^n \frac{\theta}{n}=\theta$
+thus the expected value of the MLE$=\theta$ and the MLE is unbiased}
